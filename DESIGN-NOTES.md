@@ -1,4 +1,4 @@
-# Design notes, v2 (2026-10-06)
+# Design notes, v3 (2026-10-06)
 
 ## References (what makes them feel premium)
 
@@ -9,7 +9,7 @@
 ## Direction (5 lines)
 
 1. Printed-matter feel: warm bone paper, near-black ink, hairline rules, one ink-dark "chapter" for Selected work; no gradients, no glows, no cards, no tiles.
-2. Type carries the design: Instrument Serif (display, italic for emphasis) at 8 to 12vw, Hanken Grotesk 300/400 for reading, DM Mono for small index labels (01, 02, "Selected work").
+2. Type carries the design: Geist 650 to 800 (self-hosted variable woff2, Latin subset, 400 to 800) with -0.035 to -0.05em tracking for headlines, Geist 400 for reading, Geist Mono for small index labels. Emphasis by colour (ink vs muted grey), never italics. v3 replaced Instrument Serif after owner feedback (too "magazine").
 3. Editorial grid: label column left, content right; large numbered list rows with hairlines instead of icon cards; left-aligned, asymmetric, lots of air.
-4. The photo is a cut-out, black and white, placed large and bleeding off the hero, overlapped by the headline; it parallaxes slowly on scroll.
-5. Motion is Lenis smooth scroll plus GSAP line reveals, a drawn SVG flow diagram and a number count-up; everything is fully visible with no JS or with prefers-reduced-motion.
+4. The photo is a cut-out, black and white, placed large at the right of the hero beside the headline (no overlap, no blend modes); light transform-only parallax on desktop.
+5. Performance first (v3): no GSAP, no Lenis, no grain overlay, no mix-blend, no filters. Native scroll; IntersectionObserver adds .in for CSS opacity/transform reveals; CSS load animation on the hero; vanilla count-up. Everything visible without JS or with prefers-reduced-motion. Page weight about 87 KB uncompressed.
