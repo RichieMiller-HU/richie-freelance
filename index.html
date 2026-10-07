@@ -91,19 +91,46 @@ img{display:block;max-width:100%;height:auto}
 .about .lede{font-size:clamp(28px,3.3vw,52px);line-height:1.1;letter-spacing:-.035em;font-weight:650;color:var(--mute);max-width:18em;text-wrap:pretty}
 .about .lede + p{margin-top:36px;max-width:34em;color:var(--ink-2);font-size:clamp(16px,1.2vw,19px)}
 
+/* numbers band: typographic, hairline separated */
+.nums{margin-top:clamp(72px,11vh,136px)}
+.nums ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px}
+.nums li{border-top:1px solid var(--rule);padding:22px 0 clamp(28px,4vh,44px)}
+.nums b{display:block;font-size:clamp(48px,5.2vw,92px);line-height:.92;letter-spacing:-.055em;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.nums b small{font-size:.5em;letter-spacing:-.03em;font-weight:700;color:var(--mute)}
+.nums li .mono{display:block;margin-top:16px;max-width:22em;line-height:1.5}
+
 /* work: ink chapter */
 .work{background:var(--ink);color:var(--paper);--rule:rgba(239,234,225,.16);--rule-strong:rgba(239,234,225,.5);--ink-2:#b5b0a5;--ink-3:#7a766d;--mute:#8f8a80}
 .work ::selection{background:var(--paper);color:var(--ink)}
 .work .mono{color:var(--ink-2)}
 .work .hi{color:var(--paper)}
 .work .head h2{font-size:clamp(40px,5.6vw,96px);line-height:.98;letter-spacing:-.045em;font-weight:750;max-width:11em;text-wrap:balance}
-.work .head p{margin-top:24px;max-width:30em;color:var(--ink-2);font-size:clamp(16px,1.2vw,19px)}
+.work .head div p{margin-top:24px;max-width:30em;color:var(--ink-2);font-size:clamp(16px,1.2vw,19px)}
 .case{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr) minmax(0,4fr);gap:32px;padding:clamp(48px,7vh,88px) 0;border-top:1px solid var(--rule)}
 .case:first-of-type{margin-top:clamp(56px,9vh,112px)}
 .case .n{font-size:clamp(40px,4.2vw,64px);line-height:1;letter-spacing:-.05em;font-weight:750}
 .case .n small{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:14px}
-.case h3{font-size:clamp(26px,2.6vw,40px);line-height:1.08;letter-spacing:-.035em;font-weight:700;color:var(--mute);max-width:14em}
+.case h3{font-size:clamp(26px,2.6vw,40px);line-height:1.08;letter-spacing:-.035em;font-weight:700;color:var(--paper);max-width:14em;text-wrap:balance}
 .case .d{margin-top:18px;max-width:28em;color:var(--ink-2);font-size:clamp(15px,1.1vw,18px)}
+.r{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule);max-width:28em;color:var(--paper);font-size:clamp(15px,1.1vw,18px);line-height:1.5}
+.r .mono{display:block;margin-bottom:8px;color:var(--ink-3)}
+/* compact work rows */
+.item{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr) minmax(0,4fr);gap:32px;padding:clamp(36px,5vh,56px) 0;border-top:1px solid var(--rule)}
+.item .n{font-size:clamp(28px,2.6vw,40px);line-height:1;letter-spacing:-.05em;font-weight:750;color:var(--mute)}
+.item .n small{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:12px}
+.item h3{font-size:clamp(24px,2.2vw,34px);line-height:1.08;letter-spacing:-.035em;font-weight:700;max-width:13em;text-wrap:balance}
+.item .d{color:var(--ink-2);font-size:clamp(15px,1.1vw,18px);max-width:28em}
+.item .r{margin-top:18px}
+.work .item:last-child{border-bottom:1px solid var(--rule)}
+
+/* agents list */
+.agents ol{list-style:none;margin:0;padding:0;counter-reset:a}
+.agents li{display:grid;grid-template-columns:44px minmax(0,5fr) minmax(0,6fr);gap:24px;align-items:baseline;padding:clamp(20px,2.8vh,30px) 0;border-top:1px solid var(--rule)}
+.agents li:last-child{border-bottom:1px solid var(--rule)}
+.agents li::before{counter-increment:a;content:"0" counter(a);font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--ink-3)}
+.agents h3{font-size:clamp(21px,1.9vw,30px);line-height:1.1;letter-spacing:-.035em;font-weight:700;text-wrap:balance}
+.agents li p{color:var(--ink-2);font-size:clamp(15px,1.1vw,17px);max-width:32em}
+.agents li p .mono{display:block;margin-top:8px;color:var(--ink-3);letter-spacing:.08em}
 .case .vis{align-self:center}
 .case svg{width:100%;height:auto;display:block;overflow:visible}
 .case svg text{font-family:var(--mono);font-size:11px;letter-spacing:.06em;fill:var(--paper)}
@@ -135,6 +162,7 @@ img{display:block;max-width:100%;height:auto}
 /* contact */
 .contact{padding-bottom:clamp(40px,6vh,80px)}
 .contact h2{font-size:clamp(48px,8.4vw,150px);line-height:.94;letter-spacing:-.05em;font-weight:800;max-width:8.4em;text-wrap:balance}
+.contact .sub{margin-top:28px;max-width:30em;color:var(--ink-2);font-size:clamp(16px,1.2vw,19px)}
 .contact .links{margin-top:clamp(40px,7vh,88px);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:32px}
 .contact .links .mono{padding-top:14px}
 .contact .links ul{list-style:none;margin:0;padding:0}
@@ -178,6 +206,12 @@ footer{padding:40px 0 36px;display:flex;justify-content:space-between;gap:16px;f
   .grid,.contact .links{grid-template-columns:1fr;gap:20px}
   .case{grid-template-columns:1fr;gap:20px}
   .case .vis{margin-top:12px;max-width:520px}
+  .item{grid-template-columns:1fr;gap:14px}
+  .item .n small{display:inline;margin:0 0 0 12px}
+  .nums ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}
+  .nums b{font-size:clamp(40px,12vw,72px)}
+  .agents li{grid-template-columns:32px minmax(0,1fr);gap:8px 12px}
+  .agents li p{grid-column:2}
   .top{grid-template-columns:1fr 1fr}
   .top .mid{display:none}
   .hero{min-height:0;justify-content:flex-start;padding-bottom:32px}
@@ -225,26 +259,38 @@ footer{padding:40px 0 36px;display:flex;justify-content:space-between;gap:16px;f
   <div class="grid" style="padding-top:28px">
     <p class="label mono"><i></i>01 About</p>
     <div>
-      <p class="lede" data-reveal>I started in design, moved into marketing, and spent fifteen years building things for other people's businesses. Now I build the <span class="hi">systems</span> that connect the tools, find the leads and take the manual work off your week.</p>
-      <p data-reveal>Strategy, build and the boring integration work in between, done by one person who has shipped it before. No agency layer, no handover.</p>
+      <p class="lede" data-reveal>I started in design, moved into marketing, and spent fifteen years building things for other people’s businesses. Now I build the <span class="hi">systems</span> that connect the tools, find the leads and take the manual work off your week.</p>
+      <p data-reveal>That means I can help with the work as well as the systems behind it, as one person who has shipped it before. No agency layer, no handover.</p>
     </div>
+  </div>
+  <div class="grid nums">
+    <p class="label mono"><i></i>In numbers</p>
+    <ul data-reveal>
+      <li><b><span data-count="45">45</span><small>h</small></b><span class="mono">About 45 hours of manual work saved each week</span></li>
+      <li><b>€<span data-count="100">100</span>k<small>+</small></b><span class="mono">Extra newsletter revenue in one year</span></li>
+      <li><b><span data-count="50000">50,000</span><small>+</small></b><span class="mono">Cold emails delivered to the inbox</span></li>
+      <li><b><span data-count="18.2" data-dec="1">18.2</span><small>%</small></b><span class="mono">Of outreach replies became bookings</span></li>
+      <li><b><span data-count="250">250</span><small>+</small></b><span class="mono">Projects delivered across four continents</span></li>
+      <li><b><span data-count="15">15</span><small>yrs</small></b><span class="mono">In design and marketing work</span></li>
+    </ul>
   </div>
 </section>
 
 <section class="section work" id="work">
   <div class="grid head">
-    <p class="label mono"><i></i>02 Selected work</p>
+    <p class="label mono"><i></i>02 Work</p>
     <div>
-      <h2 data-reveal>One of the biggest tourism companies in Europe.</h2>
-      <p data-reveal>Three systems built end to end over the last few years. The client stays unnamed; the work is theirs.</p>
+      <h2 data-reveal>What I’ve built.</h2>
+      <p data-reveal>Eight systems, most of them for one of the biggest tourism companies in Europe. That client stays unnamed; the work is theirs.</p>
     </div>
   </div>
 
   <article class="case" data-reveal>
     <div class="n">01<small>Marketing automation</small></div>
     <div>
-      <h3>End-to-end AI automations connecting their marketing tools, <span class="hi">saving around 45 hours of manual work a week.</span></h3>
-      <p class="d">Every tool in the stack now talks to the others. Hand-offs that used to be copied, pasted and chased are handled by the system.</p>
+      <h3>AI automations that save 45 hours a week</h3>
+      <p class="d">I connected ads, email, social, ticket data and the CRM so the team spends less time moving information between tools and pulling reports together.</p>
+      <p class="r"><span class="mono">Result</span>About 45 hours of manual work saved a week for one of the biggest tourism companies in Europe.</p>
     </div>
     <div class="vis" aria-hidden="true">
       <svg viewBox="0 0 420 360">
@@ -258,11 +304,11 @@ footer{padding:40px 0 36px;display:flex;justify-content:space-between;gap:16px;f
         </g>
         <g class="nodes">
           <rect class="box" x="8" y="46" width="64" height="32" rx="16"/><text x="40" y="66" text-anchor="middle">ADS</text>
-          <rect class="box" x="8" y="164" width="64" height="32" rx="16"/><text x="40" y="184" text-anchor="middle">CRM</text>
-          <rect class="box" x="8" y="282" width="64" height="32" rx="16"/><text x="40" y="302" text-anchor="middle">EMAIL</text>
-          <rect class="box" x="348" y="46" width="64" height="32" rx="16"/><text x="380" y="66" text-anchor="middle">SHEETS</text>
-          <rect class="box" x="348" y="164" width="64" height="32" rx="16"/><text x="380" y="184" text-anchor="middle">REPORTS</text>
-          <rect class="box" x="348" y="282" width="64" height="32" rx="16"/><text x="380" y="302" text-anchor="middle">CHAT</text>
+          <rect class="box" x="8" y="164" width="64" height="32" rx="16"/><text x="40" y="184" text-anchor="middle">EMAIL</text>
+          <rect class="box" x="8" y="282" width="64" height="32" rx="16"/><text x="40" y="302" text-anchor="middle">SOCIAL</text>
+          <rect class="box" x="348" y="46" width="64" height="32" rx="16"/><text x="380" y="66" text-anchor="middle">TICKETS</text>
+          <rect class="box" x="348" y="164" width="64" height="32" rx="16"/><text x="380" y="184" text-anchor="middle">CRM</text>
+          <rect class="box" x="348" y="282" width="64" height="32" rx="16"/><text x="380" y="302" text-anchor="middle">REPORTS</text>
           <circle class="dot" cx="210" cy="180" r="4"/>
           <circle class="box" cx="210" cy="180" r="22"/>
           <text class="lab" x="210" y="232" text-anchor="middle">AI AUTOMATIONS</text>
@@ -272,22 +318,51 @@ footer{padding:40px 0 36px;display:flex;justify-content:space-between;gap:16px;f
   </article>
 
   <article class="case" data-reveal>
-    <div class="n">02<small>Email infrastructure</small></div>
+    <div class="n">02<small>Cold email</small></div>
     <div>
-      <h3>Email infrastructure that put <span class="hi">50,000+ emails into the inbox</span> and booked clients and partnerships.</h3>
-      <p class="d">Domains, warm-up, sending and replies set up as one system, so the messages land where they should and the conversations get answered.</p>
+      <h3>AI-powered cold email at scale</h3>
+      <p class="d">I built a system that prepares cold email campaigns for human review, sends the approved emails and keeps replies together.</p>
+      <p class="r"><span class="mono">Result</span>50,000+ emails delivered to the inbox for one of the biggest tourism companies in Europe, with a 13.7% reply rate and 18.2% of replies becoming bookings.</p>
     </div>
     <div class="vis" aria-hidden="true">
-      <div class="big"><span data-count="50000">50,000</span>+</div>
-      <p class="mono">emails delivered to the inbox</p>
+      <div class="big"><span data-count="13.7" data-dec="1">13.7</span>%</div>
+      <p class="mono">reply rate on 50,000+ emails</p>
+    </div>
+  </article>
+
+  <article class="item" data-reveal>
+    <div class="n">03<small>Newsletter</small></div>
+    <h3>A newsletter that made €100k+ in a year</h3>
+    <div>
+      <p class="d">I built and improved a newsletter channel that gives a logistics company another way to bring in business.</p>
+      <p class="r"><span class="mono">Result</span>More than €100,000 in extra revenue in one year for Color Spedition.</p>
+    </div>
+  </article>
+
+  <article class="item" data-reveal>
+    <div class="n">04<small>CRM</small></div>
+    <h3>A custom CRM built around the team</h3>
+    <div>
+      <p class="d">I built a custom CRM and work system that lets the team manage customer records and tasks on its own server, with a tool to move work across from Monday.com.</p>
+      <p class="r"><span class="mono">Result</span>Deployed as a production pilot for one of the biggest tourism companies in Europe.</p>
+    </div>
+  </article>
+
+  <article class="item" data-reveal>
+    <div class="n">05<small>Sales data</small></div>
+    <h3>Ask your sales data in plain English with AI</h3>
+    <div>
+      <p class="d">I built a dashboard where the team can ask “What was the average boat party price in July 2025?” and get an answer from its ticket sales data.</p>
+      <p class="r"><span class="mono">Result</span>Five years of sales data from 134+ messy CSV files made usable in a dashboard, deployed and in use at one of the biggest tourism companies in Europe.</p>
     </div>
   </article>
 
   <article class="case" data-reveal>
-    <div class="n">03<small>Lead engine</small></div>
+    <div class="n">06<small>Lead finding</small></div>
     <div>
-      <h3>A custom CRM, lead scraping and AI bots that <span class="hi">find leads on forums like Reddit.</span></h3>
-      <p class="d">The bots read the threads, score the signal and drop the good ones into the CRM with context, ready for a human reply.</p>
+      <h3>AI bots that find buyers on Reddit</h3>
+      <p class="d">I built bots that scan Reddit and forums for relevant requests, pick out promising conversations and draft a helpful reply for a person to post.</p>
+      <p class="r"><span class="mono">Result</span>Relevant threads delivered daily to Slack or Notion for one of the biggest tourism companies in Europe.</p>
     </div>
     <div class="vis" aria-hidden="true">
       <svg viewBox="0 0 420 360">
@@ -311,16 +386,48 @@ footer{padding:40px 0 36px;display:flex;justify-content:space-between;gap:16px;f
         <circle class="dot" cx="214" cy="92" r="3"/>
         <circle class="dot" cx="200" cy="194" r="3"/>
         <circle class="dot" cx="160" cy="296" r="3"/>
-        <rect class="box" x="348" y="168" width="64" height="32" rx="16"/><text x="380" y="188" text-anchor="middle">CRM</text>
-        <text class="lab" x="268" y="150" text-anchor="middle">SCORED</text>
+        <rect class="box" x="348" y="168" width="64" height="32" rx="16"/><text x="380" y="188" text-anchor="middle">SLACK</text>
+        <text class="lab" x="268" y="150" text-anchor="middle">PICKED</text>
       </svg>
+    </div>
+  </article>
+
+  <article class="item" data-reveal>
+    <div class="n">07<small>Content</small></div>
+    <h3>AI that turns voice notes into posts and emails</h3>
+    <div>
+      <p class="d">I built a system that takes an idea spoken into Telegram and turns it into social and email drafts for the team to approve.</p>
+      <p class="r"><span class="mono">Result</span>Operational at one of the biggest tourism companies in Europe, connecting Instagram, TikTok, Facebook, email and GetResponse.</p>
+    </div>
+  </article>
+
+  <article class="item" data-reveal>
+    <div class="n">08<small>Meta ads</small></div>
+    <h3>AI that builds Meta ads, you approve them</h3>
+    <div>
+      <p class="d">I built an ad platform that develops ideas, writes copy and sets up Meta campaigns, with a dashboard where a person approves what goes live.</p>
+      <p class="r"><span class="mono">Result</span>Working platform for one of the biggest tourism companies in Europe, with human approval before launch.</p>
     </div>
   </article>
 </section>
 
+<section class="section agents" id="agents">
+  <div class="grid">
+    <p class="label mono"><i></i>03 AI agents I run</p>
+    <ol data-reveal>
+      <li><h3>Find the emails that need me</h3><p>I use an assistant that reads across 4 to 5 inboxes, flags what matters and drafts replies for my review.<span class="mono">Daily use; cannot send or delete mail</span></p></li>
+      <li><h3>Spot the next useful conversation</h3><p>I use a Reddit scout that finds relevant requests and drafts replies for a person to post.<span class="mono">Relevant threads delivered daily; never posts itself</span></p></li>
+      <li><h3>Get ideas out of voice notes</h3><p>I turn spoken ideas into social and email drafts through a system with a team approval screen.<span class="mono">Operational content workflow</span></p></li>
+      <li><h3>Prepare ads for a human decision</h3><p>I use AI to develop ad ideas, write copy and prepare Meta campaigns for approval.<span class="mono">Working platform; nothing launches without approval</span></p></li>
+      <li><h3>Find answers in sales data</h3><p>I use an assistant that answers plain-English questions about ticket sales, spots patterns and suggests tests.<span class="mono">Deployed; reads data without changing it</span></p></li>
+      <li><h3>Find prospects worth contacting</h3><p>I built a lead pipeline that finds companies, checks their ads and fit, finds contacts and puts the details into Google Sheets.<span class="mono">Feeds live outreach campaigns</span></p></li>
+    </ol>
+  </div>
+</section>
+
 <section class="section help" id="help">
   <div class="grid">
-    <p class="label mono"><i></i>03 What I can help with</p>
+    <p class="label mono"><i></i>04 What I can help with</p>
     <ol data-reveal>
       <li><span>AI automations and integrations</span></li>
       <li><span>Outbound and lead generation systems</span></li>
@@ -334,7 +441,7 @@ footer{padding:40px 0 36px;display:flex;justify-content:space-between;gap:16px;f
 
 <section class="section terms" id="terms" style="padding-top:0">
   <div class="grid">
-    <p class="label mono"><i></i>04 How I work</p>
+    <p class="label mono"><i></i>05 How I work</p>
     <div>
       <dl data-reveal>
         <div class="row"><dt>Availability</dt><dd>10 to 30 hours a week</dd></div>
@@ -350,8 +457,9 @@ footer{padding:40px 0 36px;display:flex;justify-content:space-between;gap:16px;f
 <section class="section contact" id="contact">
   <div class="rule" data-line></div>
   <h2 style="margin-top:40px" data-reveal>Tell me what is eating your week.</h2>
+  <p class="sub" data-reveal>I’ll talk it through with you on a 15-minute call.</p>
   <div class="links">
-    <p class="mono">05 Contact</p>
+    <p class="mono">06 Contact</p>
     <ul data-reveal>
       <li><a href="mailto:richie@get-ai-boost.co"><span>richie@get-ai-boost.co</span><span>Email</span></a></li>
       <li><a href="mailto:richie@get-ai-boost.co?subject=15-minute%20chat"><span>Book a 15-minute chat</span><span>By email</span></a></li>
@@ -374,17 +482,18 @@ footer{padding:40px 0 36px;display:flex;justify-content:space-between;gap:16px;f
   var top=document.querySelector('.top');
   var img=document.querySelector('.portrait img');
   var hero=document.querySelector('.hero');
-  var c=document.querySelector('[data-count]');
-  function count(){
-    if(!c||c.done)return;c.done=1;
-    var t=+c.getAttribute('data-count'),t0=performance.now(),d=2000;
-    (function f(now){var p=Math.min(1,(now-t0)/d),e=1-Math.pow(1-p,3);c.textContent=Math.round(t*e).toLocaleString('en-GB');if(p<1)requestAnimationFrame(f)})(t0);
+  function count(box){
+    box.querySelectorAll('[data-count]').forEach(function(c){
+      if(c.done)return;c.done=1;c.style.display='inline-block';c.style.minWidth=c.getBoundingClientRect().width+'px';c.style.textAlign='right';
+      var t=+c.getAttribute('data-count'),dp=+(c.getAttribute('data-dec')||0),t0=performance.now(),d=1800;
+      (function f(now){var p=Math.min(1,(now-t0)/d),e=1-Math.pow(1-p,3);c.textContent=(t*e).toLocaleString('en-GB',{minimumFractionDigits:dp,maximumFractionDigits:dp});if(p<1)requestAnimationFrame(f)})(t0);
+    });
   }
   if(!('IntersectionObserver' in window)||reduce){root.classList.remove('js');return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     if(!e.isIntersecting)return;
     e.target.classList.add('in');
-    if(e.target.contains(c))count();
+    count(e.target);
     io.unobserve(e.target);
   })},{rootMargin:'0px 0px -10% 0px'});
   document.querySelectorAll('[data-reveal],[data-line]').forEach(function(el){io.observe(el)});

@@ -13,3 +13,4 @@
 3. Editorial grid: label column left, content right; large numbered list rows with hairlines instead of icon cards; left-aligned, asymmetric, lots of air.
 4. The photo is a cut-out, black and white, placed large at the right of the hero beside the headline (no overlap, no blend modes); light transform-only parallax on desktop.
 5. Performance first (v3): no GSAP, no Lenis, no grain overlay, no mix-blend, no filters. Native scroll; IntersectionObserver adds .in for CSS opacity/transform reveals; CSS load animation on the hero; vanilla count-up. Everything visible without JS or with prefers-reduced-motion. Page weight about 87 KB uncompressed.
+6. v4 (2026-10-07): numbers band in About (6 figures, hairline grid, count-up with locked widths), "What I’ve built" W1 to W8 (diagram rows for W1, W2, W6; compact numbered rows for the rest), "AI agents I run" list. Content from ACHIEVEMENTS-CATALOGUE-v2.md.
